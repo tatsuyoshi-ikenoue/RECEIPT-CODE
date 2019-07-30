@@ -2,28 +2,16 @@
 # coding: utf-8
 
 # # IMPORT DATA
-
-# In[1]:
-
-
 import pandas as pd
 import numpy  as np
 import os
 import sys
 import re
 
-
-# In[2]:
-
-
 import zenhan
 from numpy import vectorize
 import pdread
 import DokenPo_insurance
-
-
-# In[3]:
-
 
 def to_float(x):
     x = str(x).replace('L', '')
@@ -34,17 +22,10 @@ def to_float(x):
 
 # ## IMPORT CKD LIST
 
-# In[4]:
-
-
 # ディレクトリの指定
 DIR = "D:\Coding\点数表"
 os.chdir(DIR)
 os.getcwd()
-
-
-# In[5]:
-
 
 SHOHOSEN_CODE = pdread.read_csv_nohead('処方箋交付.csv')
 SHOHOSEN_CODE.columns = ['診療行為コード']
@@ -53,25 +34,14 @@ SHOHOSEN_CODE[:5]
 
 # ## GET FOLDER NAMES
 
-# In[6]:
-
-
 # ディレクトリの指定
 DIR = "D:\DokenPo\med"
 os.chdir(DIR)
 os.getcwd()
 
-
-# In[7]:
-
-
 def forda_list(DIR):
     open_name = os.listdir(DIR)
     return open_name
-
-
-# In[8]:
-
 
 def files(forda_DIR):
     open_name = os.listdir(forda_DIR)
@@ -86,10 +56,6 @@ def files(forda_DIR):
     
     return file_list
 
-
-# In[9]:
-
-
 for j, folder in enumerate(forda_list(DIR)):
     if j == 0: file_name_dic = {}
     try:
@@ -103,24 +69,13 @@ for j, folder in enumerate(forda_list(DIR)):
     except:
         print('Error !! CHECK ERROR !!')
 
-
-# In[10]:
-
-
 for f in file_name_dic:
     print(f)
 
 
 # # CREATE CKD FILES
 
-# In[11]:
-
-
 DOWN_LOAD_DIR = r'D:\DokenPo\PROCEDURE\SHOHOSEN_KOFU'
-
-
-# In[ ]:
-
 
 for folder in file_name_dic:
     DIR_lower = os.path.join(DIR, str(folder))
@@ -143,10 +98,3 @@ for folder in file_name_dic:
     shohosen_df.dropna(subset = ['DATA'], inplace = True)
     
     shohosen_df.to_csv(os.path.join(DOWN_LOAD_DIR, 'SHOHOSEN_from_prescription_' + str(folder) + '.csv'), index = False)
-
-
-# In[ ]:
-
-
-
-
