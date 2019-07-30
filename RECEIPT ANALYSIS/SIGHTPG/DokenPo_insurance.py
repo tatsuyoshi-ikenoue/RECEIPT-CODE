@@ -63,9 +63,9 @@ def reset_ymd(x):
                 if md < '0501':
                     y = '4' + str(y - 1989 + 1).zfill(2) # 平成
                 else:
-                    y = '5' + str(y - 2019 + 1).zfill(2) # 新年号
+                    y = '5' + str(y - 2019 + 1).zfill(2) # 令和
             else:
-                y = '5' + str(y - 2019 + 1).zfill(2) # 新年号
+                y = '5' + str(y - 2019 + 1).zfill(2) # 令和
             return y + m + d
         else: return str(y) + str(m) + str(d)
 
