@@ -5,10 +5,12 @@
 
 # PROCEDURE CODE MASTER
  # r_9cm_20190719.csv
+ # This file is the procedure code in Japan (almost Surgery) to translate to ICD9CM CODE.
  # FROM MEDIS http://www2.medis.or.jp/stdcd/shujutu/index.html
  # DATA PERIODS from 20120401 to 20190528
 
  # shyakaihoken_tensuhyo_20190730.csv
+ # This file includes all procedure code in Japan.
  # FROM SHIHARAIKIKIN https://www.ssk.or.jp/
  # DATA PERIODS from 20120112 to 20190612
 
