@@ -1,0 +1,9 @@
+###### Requirements without Version Specifiers ######`
+# in Report
+pandas
+numpy
+re
+zenhan
+os
+sys
+io

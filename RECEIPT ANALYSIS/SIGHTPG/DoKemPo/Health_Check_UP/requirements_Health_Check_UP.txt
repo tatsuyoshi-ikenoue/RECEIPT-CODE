@@ -1,0 +1,11 @@
+###### Requirements without Version Specifiers ######`
+# in Report
+hashlib
+csv
+datetime
+numpy
+os
+pandas
+re
+sys
+zenhan
